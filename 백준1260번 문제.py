@@ -9,9 +9,13 @@ def dfs(graph, root):
         item = stack.pop()
 
         if item not in visited:
-            visited.append(item)
-            sortList = list(set(graph[item]) - set(visited))
-            stack += sorted(sortList, reverse=True)
+            if item not in graph:
+                visited.append(1)
+                return visited
+            else:
+                visited.append(item)
+                sortList = list(set(graph[item]) - set(visited))
+                stack += sorted(sortList, reverse=True)
 
     return visited
 
@@ -24,10 +28,13 @@ def bfs(graph, root):
         item = dq.popleft()
 
         if item not in visited:
-            visited.append(item)
-            sortList = list(set(graph[item]) - set(visited))
-            sorted(sortList)
-            dq += sortList
+            if item not in graph:
+                visited.append(1)
+                return visited
+            else:
+                visited.append(item)
+                sortList = list(set(graph[item]) - set(visited))
+                dq += sorted(sortList)
     return visited
 
 
@@ -48,4 +55,3 @@ for i in range(m):
 
 print(' '.join(str(i) for i in dfs(graph_list, v)))
 print(' '.join(str(i) for i in bfs(graph_list, v)))
-
