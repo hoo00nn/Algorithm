@@ -19,7 +19,7 @@ def solution(s):
     return ret
 
 
-# 밑에서부턴 처음 내가 짠 코
+# 밑에서부턴 처음 내가 짠 코드
 
 def solution(s):
     answer = []
