@@ -1,5 +1,5 @@
 # 순서 셀 때 생각 잘하자
-# 예외 생각 잘하
+# 예외 생각 잘하자
 
 def solution(n, words):
     answer = [words[0]]
@@ -17,7 +17,7 @@ def solution(n, words):
     return [0, 0]
 
 # 효율적인 코드
-# 좀 더 생각하면 충분히 할 수 있었는데,, 집중력 문제
+# 좀 더 생각하면 충분히 할 수 있었는데,, 집중력 문
 
 def solution(n, words):
     for p in range(1, len(words)):
