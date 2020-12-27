@@ -57,7 +57,6 @@ def solution(key, lock):
         for j in range(M - 1 + N):
             for k in range(M - 1 + N):
                 copyExpend = copy.deepcopy(expend)
-                print(copyExpend)
 
                 if isUnlocked(M, N, j, k, key, copyExpend):
                     return True
