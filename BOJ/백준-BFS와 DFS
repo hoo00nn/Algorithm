@@ -1,0 +1,52 @@
+from collections import deque
+
+def dfs(G, V):
+    visited = []
+    stack = []
+
+    stack.append(V)
+
+    while len(stack) != 0:
+        N = stack.pop()
+        visited.append(N)
+
+        for i in G[N]:
+            if i not in visited:
+                stack.append(i)
+                break
+
+    return visited
+
+def bfs(G, V):
+    visited = []
+    Q = deque([V])
+
+    while len(Q) != 0:
+        N = Q.popleft()
+
+        if N not in visited:
+            visited.append(N)
+            Q += set(G[N]) - set(visited)
+
+    return visited
+
+def solution():
+    graph = dict()
+    N, M, V = map(int, input().split())
+
+    T = [tuple(input().split()) for _ in range(M)]
+
+    for i in range(N):
+        graph[i+1] = list()
+
+    for k, i in T:
+        graph[int(k)].append(int(i))
+        graph[int(i)].append(int(k))
+
+    for i in graph:
+        graph[int(i)].sort()
+
+    print(*dfs(graph, V))
+    print(*bfs(graph, V))
+
+solution()

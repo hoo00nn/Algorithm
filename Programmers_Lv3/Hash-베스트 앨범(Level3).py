@@ -11,10 +11,14 @@ def solution(genres, plays):
 
         playlist[item].append((idx, plays[idx]))
 
+    print(playlist)
+
     for i in playlist.keys():
         playlist[i].sort(key=lambda x: x[1], reverse=True)
 
     playNum = sorted(playlist.values(), key=lambda x: sum(i[1] for i in x), reverse=True)
+
+    print(playNum)
 
     for i in playNum:
         if len(i) == 1:
