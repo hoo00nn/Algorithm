@@ -1,7 +1,7 @@
 # 시간복잡도는 O(NlogN)
 # 공간복잡도는 O(2N)
 def merge_sort(arr):
-    if len(arr) < 2:
+즘    if len(arr) < 2:
         return arr
 
     mid = len(arr) // 2
